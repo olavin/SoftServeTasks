@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * Created by Olavin on 20.10.2014.
  */
 public class StringEntity {
-    IValidator validator;
+    private IValidator validator;
     private String name;
     private ArrayList<String> entityList = null;
 
