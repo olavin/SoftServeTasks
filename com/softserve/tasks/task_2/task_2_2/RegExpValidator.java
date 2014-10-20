@@ -4,27 +4,23 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * @author Vasyl Danylyuk
- *
- * <p>Used for validation strings by {@see java.util.regex.Pattern}</p>
+ * Created by Olavin on 20.10.2014.
  */
-public class StringValidator {
+public class RegExpValidator implements IValidator {
     private Pattern regExpPattern;
 
     /**
-     *
      * @param regExp string that description pattern
      */
-    public StringValidator(String regExp) {
+    public RegExpValidator(String regExp) {
         this.regExpPattern = Pattern.compile(regExp);
     }
 
     /**
-     *
      * @param sourceString string that yoy want to validate
      * @return true if sourceString is valid for your pattern
      */
-    public boolean validate(String sourceString){
+    public boolean validate(String sourceString) {
         Matcher result = regExpPattern.matcher(sourceString);
         return result.matches();
     }
